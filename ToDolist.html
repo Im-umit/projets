@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>TODO List</title>
+        <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/1859/PNG/512/checklist_117966.png" type="image/x-png" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    </head>
+    <body>
+    
+        <style type="text/css" media="all">
+        body{
+    margin: 0;
+    padding: 0;
+    background-color: #80FF00; 
+    font-family: Sofia;
+    background-image: url('https://www.camhotel.com.tr/uploads/ulkemizin-dort-bir-yanindan-guzel-manzara-fotograflari.jpg');
+    background-size: cover;
+  
+}
+
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#title{
+    text-align: center;
+    font-size: 50px;
+}
+
+#inputText{
+    width: 300px;
+    height: 46px;
+    border: 10px blue;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+    border: 0.04px solid gold;
+    border-radius: 50px;
+    color: gold;
+    background-color: transparent;
+    font-family: Sofia;
+}
+
+
+
+
+#addToDo{
+    height: 45px;
+    width: 150px;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+    background: green;
+    color: #00AA97;
+    text-align: center;
+    border-radius: 20px;
+    border: 0;
+    background-color: transparent;
+    font-family: Sofia;
+}
+
+#addToDo:active {
+    background: #0005FF;
+    color: #CCFF00;
+    font-family: Sofia;
+}
+
+
+#clearToDo{
+    height: 45px;
+    width: 150px;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+    background: red;
+    color: red;
+    text-align: center;
+    border-radius: 20px;
+    border: 0;
+    background-color: transparent;
+    font-family: Sofia;
+}
+
+#clearToDo:active{
+    background: purple;
+    color: yellow;
+    font-family: Sofia;
+}
+
+
+.paragraph-styling{
+    margin: 0;
+    cursor: pointer;
+    font-size: 35px;
+    color: deepskyblue;
+    text-transform: capitalize;
+}
+.paragraph-styling:hover{
+  color: sandybrown;
+}
+
+.to-dos{
+    margin-top: 24px;
+}
+        </style>
+        <div class="container">
+            <h1 id="title" style="color: yellowgreen;">
+              TODO LİST
+        </h1>
+            <div>
+            <input type="text" id="inputText" placeholder="Not Yazınız..." />
+            <input type="submit" id="addToDo" value="Oluştur" />
+            <input type="submit" id="clearToDo" value="Temizle" />
+            </div>
+            <div class="to-dos" id="toDoContainer">
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript" charset="utf-8">
+                let addToDoButton = document.getElementById('addToDo');
+    let toDoContainer = document.getElementById('toDoContainer');
+    let inputText = document.getElementById('inputText');
+    let clearToDo = document.getElementById('clearToDo')
+    addToDoButton.addEventListener('click',function(){
+    let paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    toDoContainer.appendChild(paragraph);
+    paragraph.innerHTML = inputText.value;
+    inputText.value = "";
+    paragraph.style.textAlign = 'center';
+    paragraph.addEventListener('click', function(){
+    paragraph.style.textDecoration = 'line-through';
+    
+    });
+    
+    
+    paragraph.addEventListener('dblclick', function(){
+        toDoContainer.removeChild(paragraph);
+    });
+    
+    clearToDo.addEventListener('click', function(){
+        paragraph.remove();
+        })
+})
+        </script>
+    </body>
+    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>Tüm Hakları Saklıdır &copy; <b>ÜMİT KOYUNCU</b> :)</p>
+</html>
